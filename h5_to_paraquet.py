@@ -79,10 +79,5 @@ pq.write_table(table, output_parquet_path, compression='snappy')
 
 print("Conversion complete!")
 print(f"You can now use this file in Spark: {output_parquet_path}")
-try:
-    from google.colab import files
-    print("\nDownloading Parquet file...")
-    files.download(output_parquet_path)
-except ImportError:
 
-    print("\nNot in Colab environment, skipping download.")
+
