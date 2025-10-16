@@ -5,8 +5,8 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-train_h5_path = "E:\AMRITA\AIMS\data\embeddings_final1.h5"
-output_parquet_path = "E:/AMRITA/PROJECTS/x-ray/embeddings_final1.parquet"
+train_h5_path = "hdfs://localhost:9000/chestxray/embeddings_final1.h5"
+output_parquet_path = "hdfs://localhost:9000/chestxray/embeddings_final1.parquet "
 
 
 label_fields = [
@@ -84,4 +84,5 @@ try:
     print("\nDownloading Parquet file...")
     files.download(output_parquet_path)
 except ImportError:
+
     print("\nNot in Colab environment, skipping download.")
